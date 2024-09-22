@@ -1,0 +1,29 @@
+/* love.module.css */
+.example {
+  position: relative;
+  width: 250px; /* Increased width */
+  height: 250px; /* Increased height */
+  background-color: red; /* Heart color */
+  transform: rotate(-45deg);
+  margin: 20px auto; /* Center the heart */
+}
+
+.example::before,
+.example::after {
+  content: '';
+  position: absolute;
+  width: 250px; /* Same as .example width */
+  height: 250px; /* Same as .example height */
+  background-color: red; /* Same color as .example */
+  border-radius: 50%; /* Makes it circular */
+}
+
+.example::before {
+  top: -125px; /* Adjusted position for left circle */
+  left: 0;
+}
+
+.example::after {
+  left: 125px; /* Adjusted position for right circle */
+  top: 0;
+}
