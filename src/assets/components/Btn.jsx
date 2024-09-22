@@ -1,8 +1,7 @@
 import React, { useRef } from 'react'
 import styles from  "./Btn.module.css";
 import { useDispatch } from 'react-redux';
-import counterStore from './Store';
-import { counterActions } from './Store';
+import { counterActions } from './Store/counterslice';
 
 const Btn = () => {
   const dispatch=useDispatch();

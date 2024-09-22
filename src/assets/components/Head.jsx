@@ -7,8 +7,6 @@ const Head = () => {
     <>
     <div className='p-2 m-2 text-xl tex-white ' >
       Current Value : {counterval}
-
-
     </div>
     </>
   )
