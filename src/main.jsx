@@ -10,10 +10,9 @@ import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Love from './assets/components/Store/Love.jsx';
 
-// Create a router with routes
 const router = createBrowserRouter([
-  { path: "/", element: <App /> }, // App component will handle privacy logic
-  { path: "/love", element: <Love /> } // Love component for /love path
+  { path: "/", element: <App /> }, 
+  { path: "/love", element: <Love /> } 
 ]);
 
 createRoot(document.getElementById('root')).render(

@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import styles from  "./Btn.module.css";
 import { useDispatch } from 'react-redux';
 import counterStore from './Store';
+import { counterActions } from './Store';
 
 const Btn = () => {
   const dispatch=useDispatch();
@@ -9,21 +10,23 @@ const inputRef=useRef();
 
 
 const handleOneAdd=()=>{
-counterStore.dispatch({type: "AddOne"})
+  dispatch(counterActions.increment())
 }
 const handleOneSubstrect=()=>{
-counterStore.dispatch({type: "SubstrectOne"})
+  dispatch(counterActions.decrement())
 }
 
 const handleAddbtn=()=>{
   const inputValue = inputRef.current.value;
-counterStore.dispatch({type: "Add" , payload: { number : inputValue} })
+  dispatch(counterActions.incrementbyamount({inputValue}))
 inputRef.current.value="";
 
 }
 const handlesubstrectbtn=()=>{
   const inputValue = inputRef.current.value;
-counterStore.dispatch({type: "substrect" , payload: { number : inputValue} })
+  dispatch(counterActions.decrementbyamount({inputValue}))
+  console.log("input value",inputValue)
+  
 inputRef.current.value="";
 }
 
@@ -59,7 +62,7 @@ inputRef.current.value="";
         </button>
         </div>
         <div className='mt-2 mb-2 m-2 text-sm tex-white ' >
-      See Twist (counter = 2405)
+      See Twist (counter : 2405)
     </div>
           
     </div>

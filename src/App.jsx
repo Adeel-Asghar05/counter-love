@@ -2,22 +2,16 @@
 
 
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import Head from "./assets/components/Head";
 import Btn from "./assets/components/Btn";
 import Love from "./assets/components/Store/Love";
 import { useNavigate } from "react-router-dom";
 
 function App() {
-  const privacy = useSelector((store) => store.privacy);
+  const {privacy} = useSelector((store)=>store.counter)
+
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch({ type: 'RESET_PRIVACY' }); 
-  }, [dispatch]);
-
-
 
   useEffect(() => {
     if (privacy) {
