@@ -8,9 +8,6 @@ const Head = () => {
     <div className='p-2 m-2 text-xl tex-white ' >
       Current Value : {counter}
     </div>
-    <div className='-mt-4 mb-2 m-2 text-sm tex-white ' >
-      See Twist in counter = 2405
-    </div>
     </>
   )
 }
